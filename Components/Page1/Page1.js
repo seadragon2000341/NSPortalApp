@@ -20,19 +20,18 @@ export default function Login({navigation}) {
   const [password, setPassword] = React.useState('');
   const check = () => {
     username == 'admin' && password == '123'
-      ? Alert.alert('Login Successful!', 'Welcome!', [
-          { text: 'Continue', onPress: () => navigation.navigate("main")} ,
-        ])
+      ? (alert('Login Successful!'),
+          navigation.navigate("main") )
       : username == '' && password == ''
-      ? Alert.alert(
+      ? alert(
           'Login Unsuccessful!',
           'Please Fill In Your Username And Password'
         )
       : username == ''
-      ? Alert.alert('Login Unsuccessful!', 'Please Fill In Your Username')
+      ? alert('Login Unsuccessful!', 'Please Fill In Your Username')
       : password == ''
-      ? Alert.alert('Login Unsuccessful!', 'Please Fill In Your Password')
-      : Alert.alert('Login Unsuccessful!', 'Wrong Username Or Password', [
+      ? alert('Login Unsuccessful!', 'Please Fill In Your Password')
+      : alert('Login Unsuccessful!', 'Wrong Username Or Password', [
           { text: 'Try Again' },
         ]);
   };
