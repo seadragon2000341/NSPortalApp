@@ -7,6 +7,7 @@ import PastResults from "./PastResults";
 import { runTable } from "./Run";
 import { situpTable } from "./Situp"; 
 import { pushupTable } from "./Pushup";
+import Ins from "../Page4/Instructions"
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
@@ -112,7 +113,7 @@ export default function Page3() {
     const AppButton = ({ onPress, title }) => (
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={onPress}
+          onPress={()=>{{Ins}}}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>{title}</Text>
