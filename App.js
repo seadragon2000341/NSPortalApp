@@ -19,12 +19,6 @@ export default function App() {
               iconName = focused ? "person-sharp" : "person-outline";
             }
 
-            if (route.name === "Instruction") {
-              iconName = focused
-                ? "ios-information-circle-sharp"
-                : "ios-information-circle-outline";
-            }
-
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -36,11 +30,6 @@ export default function App() {
           name="Profile"
           options={{ headerShown: false }}
           component={ProfileScreen}
-        />
-        <Tab.Screen
-          name="Instruction"
-          options={{ headerShown: false }}
-          component={Ins}
         />
       </Tab.Navigator>
     </NavigationContainer>
