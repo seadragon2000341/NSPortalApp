@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from "react-native";
 import { Button } from "react-native";
 import { useState } from "react";
 import PastResults from "./PastResults";
@@ -130,65 +130,68 @@ function IPPT(props) {
     
 
     return (
-        <View style={styles.main}>
-            <View style={styles.container1}>
-                <Text style={styles.header}>IPPT/Fitness</Text>
-                <StatusBar style="auto" />
-            </View>
+        <ScrollView>
+            <View style={styles.main}>
+                <View style={styles.container1}>
+                    <Text style={styles.header}>IPPT/Fitness</Text>
+                    <StatusBar style="auto" />
+                </View>
 
-            <View style={styles.detailsContainer}>
-                <Text style={styles.detailTextHeader}>IPPT Details</Text>
+                <View style={styles.detailsContainer}>
+                    <Text style={styles.detailTextHeader}>IPPT Details</Text>
+                    
+                    <Text style={styles.detailTextHeader2}>IPPT Deadline: </Text>
+                    <Text style={styles.detailText}>10 June 2022</Text>
+
+                    <Text style={styles.detailTextHeader2}>Past IPPT Results: </Text>
+                    <PastResults year="2021" grade="Gold"/>
+                    <PastResults year="2020" grade="Gold"/>
+                    <PastResults year="2019" grade="Gold"/>
+                    <PastResults year="2018" grade="Gold"/>
+                    <PastResults year="2017" grade="Gold"/>
+                </View>
+
+                <View style={styles.detailsContainer2}>
+                    <Text style={styles.detailTextHeader}>IPPT Calculator</Text>
+                    <View style={styles.detailsContainer3}>
+                        <Button title="-" onPress={minusAge} disabled={age === 18}></Button>
+                        <Text style={styles.detailTextHeader4}>Age: {age}</Text> 
+                        <Button title="+" onPress={plusAge} disabled={age === 60}></Button>
+                    </View>
+
+                    <View style={styles.detailsContainer3}>
+                        <Button title="-" onPress={minusSitup} disabled={situp === 0}></Button>
+                        <Text style={styles.detailTextHeader4}>Sit-up: {situp}</Text> 
+                        <Button title="+" onPress={plusSitup} disabled={situp === 60}></Button>
+                        <Text style={styles.detailTextHeaderScore}>score: {scoreSitup}</Text> 
+                    </View>
+
+                    <View style={styles.detailsContainer3}>
+                        <Button title="-" onPress={minusPushup} disabled={pushup === 0}></Button>
+                        <Text style={styles.detailTextHeader4}>Push-up: {pushup}</Text> 
+                        <Button title="+" onPress={plusPushup} disabled={pushup === 60}></Button>
+                        <Text style={styles.detailTextHeaderScore}>score: {scorePushup}</Text> 
+                    </View>
+
+                    <View style={styles.detailsContainer3}>
+                        <Button title="-" onPress={minusRun} disabled={runMin === 8 && runSec === 30}></Button>
+                        <Text style={styles.detailTextHeader4}>2.4Km Run: {runMin}min {runSec}sec
+                        </Text> 
+                        <Button title="+" onPress={plusRun} disabled={runMin === 18 && runSec === 20}></Button>
+                        <Text style={styles.detailTextHeaderScore}>score: {scoreRun}</Text> 
+                    </View>
+                    
                 
-                <Text style={styles.detailTextHeader2}>IPPT Deadline: </Text>
-                <Text style={styles.detailText}>10 June 2022</Text>
+                    <Text style={styles.detailTextHeader3}>Results: {total} Points</Text>
+                    <Text style={styles.detailTextGrade}>{grade}</Text>
+                    <AppButton title="Start Self-administered IPPT" size="sm" backgroundColor="#007bff" onPress={onPress}/>
 
-                <Text style={styles.detailTextHeader2}>Past IPPT Results: </Text>
-                <PastResults year="2021" grade="Gold"/>
-                <PastResults year="2020" grade="Gold"/>
-                <PastResults year="2019" grade="Gold"/>
-                <PastResults year="2018" grade="Gold"/>
-                <PastResults year="2017" grade="Gold"/>
-            </View>
 
-            <View style={styles.detailsContainer2}>
-                <Text style={styles.detailTextHeader}>IPPT Calculator</Text>
-                <View style={styles.detailsContainer3}>
-                    <Button title="-" onPress={minusAge} disabled={age === 18}></Button>
-                    <Text style={styles.detailTextHeader4}>Age: {age}</Text> 
-                    <Button title="+" onPress={plusAge} disabled={age === 60}></Button>
                 </View>
-
-                <View style={styles.detailsContainer3}>
-                    <Button title="-" onPress={minusSitup} disabled={situp === 0}></Button>
-                    <Text style={styles.detailTextHeader4}>Sit-up: {situp}</Text> 
-                    <Button title="+" onPress={plusSitup} disabled={situp === 60}></Button>
-                    <Text style={styles.detailTextHeaderScore}>score: {scoreSitup}</Text> 
-                </View>
-
-                <View style={styles.detailsContainer3}>
-                    <Button title="-" onPress={minusPushup} disabled={pushup === 0}></Button>
-                    <Text style={styles.detailTextHeader4}>Push-up: {pushup}</Text> 
-                    <Button title="+" onPress={plusPushup} disabled={pushup === 60}></Button>
-                    <Text style={styles.detailTextHeaderScore}>score: {scorePushup}</Text> 
-                </View>
-
-                <View style={styles.detailsContainer3}>
-                    <Button title="-" onPress={minusRun} disabled={runMin === 8 && runSec === 30}></Button>
-                    <Text style={styles.detailTextHeader4}>2.4Km Run: {runMin}min {runSec}sec
-                    </Text> 
-                    <Button title="+" onPress={plusRun} disabled={runMin === 18 && runSec === 20}></Button>
-                    <Text style={styles.detailTextHeaderScore}>score: {scoreRun}</Text> 
-                </View>
-                
-            
-                <Text style={styles.detailTextHeader3}>Results: {total} Points</Text>
-                <Text style={styles.detailTextGrade}>{grade}</Text>
-                <AppButton title="Start Self-administered IPPT" size="sm" backgroundColor="#007bff" onPress={onPress}/>
-
 
             </View>
-
-        </View>
+        </ScrollView>
+        
         
         
         
