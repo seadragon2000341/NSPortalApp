@@ -14,7 +14,7 @@ const onPressTitle = () => {
   console.log("title pressed");
 };
 
-export default function Ins() {
+export default function Ins(props) {
   return (
     <ScrollView>
       <View style={insStyles.container}>
@@ -65,7 +65,7 @@ export default function Ins() {
           />
         </View>
         <View>
-          <TouchableOpacity style={[insStyles.button]}>
+          <TouchableOpacity style={[insStyles.button]} onPress = {()=>props.navigation.navigate('Page5')}>
             <Text>Proceed</Text>
           </TouchableOpacity>
         </View>

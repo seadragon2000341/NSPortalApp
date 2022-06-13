@@ -9,7 +9,8 @@ import { situpTable } from "./Situp";
 import { pushupTable } from "./Pushup";
 import Ins from "../Page4/Instructions"
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
+import Page5 from "../Page5/Page5"
 
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
@@ -205,7 +206,8 @@ export default function Page3() {
     return (
     <Stack.Navigator>
           <Stack.Screen options={{headerShown: false}} name="Page3" component={IPPT}/>
-          <Stack.Screen name="ScreenTwo" component={Ins}/>
+            <Stack.Screen options={{headerShown: false}} name="ScreenTwo" component={Ins} />
+            <Stack.Screen options={{headerShown: false}} name="Page5" component={Page5}/>
     </Stack.Navigator>
 
     );
