@@ -20,15 +20,12 @@ export default function App() {
               iconName = focused ? "person-sharp" : "person-outline";
             }
 
-<<<<<<< Updated upstream
-=======
             if (route.name === "Ippt") {
               iconName = focused
                 ? "ios-information-circle-sharp"
                 : "ios-information-circle-outline";
             }
 
->>>>>>> Stashed changes
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -41,15 +38,12 @@ export default function App() {
           options={{ headerShown: false }}
           component={ProfileScreen}
         />
-<<<<<<< Updated upstream
-=======
         
         <Tab.Screen
           name="Ippt"
           options={{ headerShown: false }}
           component={Page3}
         />
->>>>>>> Stashed changes
       </Tab.Navigator>
     </NavigationContainer>
   );

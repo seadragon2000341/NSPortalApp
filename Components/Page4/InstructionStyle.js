@@ -16,7 +16,7 @@ const insStyles = StyleSheet.create({
     borderWidth: 3,
     borderColor: "black",
     flex: 1,
-    justifyContent: "top", //downwards to the center
+    justifyContent: "flex-start", //downwards to the center
     alignItems: "center", //left or right
   },
   firstText: {

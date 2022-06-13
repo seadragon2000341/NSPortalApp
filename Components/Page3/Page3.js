@@ -8,11 +8,14 @@ import { runTable } from "./Run";
 import { situpTable } from "./Situp"; 
 import { pushupTable } from "./Pushup";
 import Ins from "../Page4/Instructions"
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
 
-export default function Page3() {
+function IPPT(props) {
     const [age, setAge] = useState(25);
     const [situp, setSitup] = useState(30);
     const [pushup, setPushup] = useState(30);
@@ -110,15 +113,20 @@ export default function Page3() {
         update()
     }
 
+    
+    const onPress = () => {
+        props.navigation.navigate('ScreenTwo');
+    };
+
     const AppButton = ({ onPress, title }) => (
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={()=>{{Ins}}}
+          onPress={onPress}
           style={styles.appButtonContainer}
         >
           <Text style={styles.appButtonText}>{title}</Text>
         </TouchableOpacity>
-      );
+    );
     
 
     return (
@@ -175,7 +183,7 @@ export default function Page3() {
             
                 <Text style={styles.detailTextHeader3}>Results: {total} Points</Text>
                 <Text style={styles.detailTextGrade}>{grade}</Text>
-                <AppButton title="Start Self-administered IPPT" size="sm" backgroundColor="#007bff" />
+                <AppButton title="Start Self-administered IPPT" size="sm" backgroundColor="#007bff" onPress={onPress}/>
 
 
             </View>
@@ -184,11 +192,22 @@ export default function Page3() {
         
         
         
-            
-        
-        
+          
     )
 }
+
+export default function Page3() {
+    const Stack = createStackNavigator();
+  
+    return (
+    <Stack.Navigator>
+          <Stack.Screen options={{headerShown: false}} name="Page3" component={IPPT}/>
+          <Stack.Screen name="ScreenTwo" component={Ins}/>
+    </Stack.Navigator>
+
+    );
+}
+
 
 const styles = StyleSheet.create({
     main: {
