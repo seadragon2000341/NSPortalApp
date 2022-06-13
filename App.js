@@ -1,12 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import Page3 from "./Components/Page3/Page3";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>testing 3.2</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Page3/>
   );
 }
 
@@ -15,6 +13,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    //justifyContent: "center",
+    paddingTop: 50,
   },
 });
