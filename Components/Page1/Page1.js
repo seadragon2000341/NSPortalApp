@@ -13,23 +13,15 @@ import { MainStack } from '../../App';
 import {createStackNavigator} from '@react-navigation/stack';
 
 
-<<<<<<< Updated upstream
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
-
-export default function Login() {
-  const [username, setUsername] = React.useState('');
-=======
 export default function Login({navigation}) {
     const Stack = createStackNavigator();
   function LoginPage(){
     const [username, setUsername] = React.useState('');
->>>>>>> Stashed changes
   const [password, setPassword] = React.useState('');
   const check = () => {
     username == 'admin' && password == '123'
       ? Alert.alert('Login Successful!', 'Welcome!', [
-          { text: 'Continue', onPress: () => console.log('OK Pressed') },
+          { text: 'Continue', onPress: () => navigation.navigate("main")} ,
         ])
       : username == '' && password == ''
       ? Alert.alert(
@@ -116,9 +108,7 @@ export default function Login({navigation}) {
         </Text>
       </TouchableOpacity>
       <Text style={{ padding: 10, fontSize: 42 }}></Text>
-      <TouchableOpacity onPress={()=>{navigation.navigate("main")}}>
-        <Text>Button</Text>
-      </TouchableOpacity>
+    
     </View>
   );
   }

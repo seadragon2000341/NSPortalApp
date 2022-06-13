@@ -9,69 +9,58 @@ import { Ionicons } from "@expo/vector-icons";
 import Ins from "./Components/Page4/Instructions";
 import Login from "./Components/Page1/Page1";
 
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from "@react-navigation/stack";
 
-
-export function MainStack(){
-  return(
+export function MainStack() {
+  return (
     <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-           let iconName;
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
 
-           if (route.name === "Profile") {
-              iconName = focused ? "person-sharp" : "person-outline";
-            }
+          if (route.name === "Profile") {
+            iconName = focused ? "person-sharp" : "person-outline";
+          }
 
-            if (route.name === "Ippt") {
-             iconName = focused
-                ? "ios-information-circle-sharp"
-               : "ios-information-circle-outline";
-           }
+          if (route.name === "Ippt") {
+            iconName = focused
+              ? "ios-information-circle-sharp"
+              : "ios-information-circle-outline";
+          }
 
-<<<<<<< Updated upstream
-            // You can return any component that you like here!
-=======
           // You can return any component that you like here!
->>>>>>> Stashed changes
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: "darkgreen",
-          tabBarInactiveTintColor: "gray",
-        })}
-      >
-        <Tab.Screen
-          name="Profile"
-          options={{ headerShown: false }}
-          component={ProfileScreen}
-        />
-<<<<<<< Updated upstream
-        
-=======
-      
->>>>>>> Stashed changes
-        <Tab.Screen
-          name="Ippt"
-          options={{ headerShown: false }}
-          component={IpptStack}
-        />
-<<<<<<< Updated upstream
-      </Tab.Navigator>
-=======
-        </Tab.Navigator>
-  )
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "darkgreen",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
+      <Tab.Screen
+        name="Profile"
+        options={{ headerShown: false }}
+        component={ProfileScreen}
+      />
+
+      <Tab.Screen
+        name="Ippt"
+        options={{ headerShown: false }}
+        component={IpptStack}
+      />
+    </Tab.Navigator>
+  );
 }
 export default function App() {
-  
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-        <Stack.Screen name="Login" component={Login} options={{headerShown:false}}></Stack.Screen>
-
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        ></Stack.Screen>
       </Stack.Navigator>
->>>>>>> Stashed changes
     </NavigationContainer>
   );
 }
