@@ -55,7 +55,7 @@ export default function Ins(props) {
         </View>
         <View>
           <Image
-            source={require("./sit-ups.png")}
+            source={require("./situp.gif")}
             style={{
               width: 500,
               height: 200,
