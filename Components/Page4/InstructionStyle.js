@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 const insStyles = StyleSheet.create({
   baseText: {
-    fontFamily: "Arial",
+    //fontFamily: "Arial",
   },
   titleText: {
     fontSize: 25,
