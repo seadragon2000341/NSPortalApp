@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import insStyles from "./InstructionStyle.js";
+import pushupgif from "./pushup.gif";
 
 const onPressTitle = () => {
   console.log("title pressed");
@@ -42,7 +43,7 @@ export default function Ins(props) {
         </Text>
         <View>
           <Image
-            source={require("./push-up.png")}
+            source={require("./pushup.gif")}
             style={{
               width: 500,
               height: 200,
