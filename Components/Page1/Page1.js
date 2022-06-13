@@ -1,0 +1,118 @@
+import * as React from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  Alert,
+} from 'react-native';
+import Constants from 'expo-constants';
+
+// You can import from local files
+import AssetExample from './components/AssetExample';
+
+// or any pure javascript modules available in npm
+import { Card } from 'react-native-paper';
+
+export default function App() {
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const check = () => {
+    username == 'user' && password == '123'
+      ? Alert.alert('Login Successful', 'Welcome')
+      : Alert.alert('Login Unsuccessful', 'Please Try Again');
+  };
+  const qrlogin = () => {
+    Alert.alert('Login Successful', 'Welcome');
+  };
+  return (
+    <View style={styles.container}>
+      <Text style={{ textAlign: 'center', fontSize: 25, fontWeight: 'bold' }}>
+        Scan with Singpass app
+      </Text>
+      <Text style={{ textAlign: 'center', fontSize: 25, marginBottom: 5 }}>
+        to login
+      </Text>
+      <TouchableOpacity
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onPress={qrlogin}>
+        <Image
+          source={{
+            uri: 'https://resource.stg.fpdsapim.myinfo.gov.sg/mockpass/images/qr-code.png',
+          }}
+          style={{
+            width: 300,
+            height: 300,
+            borderRadius: 10,
+            marginTop: 5,
+            borderWidth: 5,
+            borderColor: 'red',
+          }}
+        />
+      </TouchableOpacity>
+      <Text style={styles.paragraph1}>-------------- OR --------------</Text>
+      <TextInput
+        style={{
+          height: 40,
+          backgroundColor: 'white',
+          fontSize: 18,
+          margin: 10,
+        }}
+        placeholder="  Singpass ID"
+        onChangeText={(newText) => setUsername(newText)}
+        defaultValue={username}
+      />
+      <TextInput
+        style={{
+          height: 40,
+          backgroundColor: 'white',
+          fontSize: 18,
+          margin: 10,
+        }}
+        placeholder="  Password"
+        onChangeText={(newText) => setPassword(newText)}
+        defaultValue={password}
+      />
+      <TouchableOpacity
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'red',
+          borderRadius: 10,
+          height: 50,
+        }}
+        onPress={check}>
+        <Text style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>Log In</Text>
+      </TouchableOpacity>
+      <Text style={{ padding: 10, fontSize: 42 }}></Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    padding: 8,
+  },
+  paragraph1: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: 'gray',
+  },
+  paragraph2: {
+    marginLeft: 10,
+    fontSize: 18,
+    color: 'white',
+  },
+});
