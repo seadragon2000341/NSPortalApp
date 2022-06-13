@@ -16,16 +16,31 @@ import AssetExample from './components/AssetExample';
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
 
-export default function App() {
+export default function Login() {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const check = () => {
-    username == 'user' && password == '123'
-      ? Alert.alert('Login Successful', 'Welcome')
-      : Alert.alert('Login Unsuccessful', 'Please Try Again');
+    username == 'admin' && password == '123'
+      ? Alert.alert('Login Successful!', 'Welcome!', [
+          { text: 'Continue', onPress: () => console.log('OK Pressed') },
+        ])
+      : username == '' && password == ''
+      ? Alert.alert(
+          'Login Unsuccessful!',
+          'Please Fill In Your Username And Password'
+        )
+      : username == ''
+      ? Alert.alert('Login Unsuccessful!', 'Please Fill In Your Username')
+      : password == ''
+      ? Alert.alert('Login Unsuccessful!', 'Please Fill In Your Password')
+      : Alert.alert('Login Unsuccessful!', 'Wrong Username Or Password', [
+          { text: 'Try Again' },
+        ]);
   };
   const qrlogin = () => {
-    Alert.alert('Login Successful', 'Welcome');
+    Alert.alert('Login Successful!', 'Welcome!', [
+      { text: 'Continue', onPress: () => console.log('OK Pressed') },
+    ]);
   };
   return (
     <View style={styles.container}>
@@ -89,7 +104,9 @@ export default function App() {
           height: 50,
         }}
         onPress={check}>
-        <Text style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>Log In</Text>
+        <Text style={{ color: 'white', fontSize: 25, fontWeight: 'bold' }}>
+          Log In
+        </Text>
       </TouchableOpacity>
       <Text style={{ padding: 10, fontSize: 42 }}></Text>
     </View>
