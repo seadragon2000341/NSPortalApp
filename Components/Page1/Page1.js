@@ -36,9 +36,7 @@ export default function Login({navigation}) {
         ]);
   };
   const qrlogin = () => {
-    Alert.alert('Login Successful!', 'Welcome!', [
-      { text: 'Continue', onPress: () => console.log('OK Pressed') },
-    ]);
+    alert('Login Successful!', navigation.navigate("main"));
   };
   return (
     <View style={styles.container}>
