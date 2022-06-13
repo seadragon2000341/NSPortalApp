@@ -10,7 +10,7 @@ const insStyles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     width: "100%",
-    fontFamily: "Times New Roman",
+    //fontFamily: "Times New Roman",
   },
   container: {
     borderWidth: 3,
@@ -29,7 +29,7 @@ const insStyles = StyleSheet.create({
   secondText: {
     fontSize: 20,
     lineHeight: 25,
-    fontFamily: "Arial",
+    //fontFamily: "Arial",
   },
   button: {
     flex: 0.15,
