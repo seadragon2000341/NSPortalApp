@@ -1,32 +1,39 @@
 import * as React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Page3 from "./Components/Page3/Page3";
+import IpptStack from "./Components/Page3/Page3";
 import ProfileScreen from "./Components/Page2/ProfilePage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Ins from "./Components/Page4/Instructions";
+import Login from "./Components/Page1/Page1";
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
+import {createStackNavigator} from '@react-navigation/stack';
+
+
+export function MainStack(){
+  return(
+    <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
+           let iconName;
 
-            if (route.name === "Profile") {
+           if (route.name === "Profile") {
               iconName = focused ? "person-sharp" : "person-outline";
             }
 
             if (route.name === "Ippt") {
-              iconName = focused
+             iconName = focused
                 ? "ios-information-circle-sharp"
-                : "ios-information-circle-outline";
-            }
+               : "ios-information-circle-outline";
+           }
 
+<<<<<<< Updated upstream
             // You can return any component that you like here!
+=======
+          // You can return any component that you like here!
+>>>>>>> Stashed changes
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: "darkgreen",
@@ -38,13 +45,33 @@ export default function App() {
           options={{ headerShown: false }}
           component={ProfileScreen}
         />
+<<<<<<< Updated upstream
         
+=======
+      
+>>>>>>> Stashed changes
         <Tab.Screen
           name="Ippt"
           options={{ headerShown: false }}
-          component={Page3}
+          component={IpptStack}
         />
+<<<<<<< Updated upstream
       </Tab.Navigator>
+=======
+        </Tab.Navigator>
+  )
+}
+export default function App() {
+  
+  const Stack = createStackNavigator();
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+
+        <Stack.Screen name="Login" component={Login} options={{headerShown:false}}></Stack.Screen>
+
+      </Stack.Navigator>
+>>>>>>> Stashed changes
     </NavigationContainer>
   );
 }

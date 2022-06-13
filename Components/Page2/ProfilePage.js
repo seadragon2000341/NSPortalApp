@@ -4,7 +4,7 @@ import styles from "./profileStyle";
 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons'; 
-import IpptIns from '../Page4/Instructions';
+
 
 export default function ProfileScreen(){
     let  [image,setImage] = useState(true)
