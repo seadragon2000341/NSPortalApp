@@ -49,7 +49,7 @@ export default function Ins(props) {
               height: 200,
               borderRadius: 25,
               padding: 50,
-              flex: 0.45,
+              //flex: 0.45,
             }}
           />
         </View>
@@ -61,7 +61,7 @@ export default function Ins(props) {
               height: 200,
               borderRadius: 25,
               padding: 50,
-              flex: 0.45,
+              //flex: 0.45,
             }}
           />
         </View>
