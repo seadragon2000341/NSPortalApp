@@ -35,11 +35,11 @@ export default function ProfileScreen({navigation}){
             </View>
             <View style = {styles.navButtons}>
                 <View style = {styles.row1}>
-                    <TouchableOpacity  style={[styles.button, {backgroundColor:"#E27D60"}]} onPress={()=>{navigation.navigate("IPPT")}} >
+                    <TouchableOpacity  style={[styles.button, {backgroundColor:"#EDF5E1"}]} onPress={()=>{navigation.navigate("IPPT")}} >
                     <MaterialCommunityIcons name="run" size={30} color="black" />
                         <Text>IPPT</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, {backgroundColor:"#C38D9E"}]}>
+                    <TouchableOpacity style={[styles.button, {backgroundColor:"#EDF5E1"}]}>
                         <FontAwesome5 name="calendar" size={30} color="black" />
                         <Text>Career Planning</Text>
                     </TouchableOpacity>
@@ -49,7 +49,7 @@ export default function ProfileScreen({navigation}){
                         <MaterialIcons name="forum" size={30} color="black" />
                         <Text>Forum</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, {backgroundColor:"#B1A296"}]}>
+                    <TouchableOpacity style={[styles.button, {backgroundColor:"#EDF5E1"}]}>
                         <FontAwesome5 name="hand-holding-medical" size={30} color="black" />
                         <Text>Health</Text>
                     </TouchableOpacity>
