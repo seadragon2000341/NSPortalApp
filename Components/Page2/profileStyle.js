@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "#fff",
     marginBottom: 10,
+    marginTop: 25,
   },
   titleText: {
     padding: 20,
