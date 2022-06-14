@@ -2,26 +2,24 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 const insStyles = StyleSheet.create({
-  baseText: {
-    //fontFamily: "Arial",
-  },
   titleText: {
     fontSize: 25,
     fontWeight: "bold",
     textAlign: "center",
     width: "100%",
+    marginTop: 25,
     //fontFamily: "Times New Roman",
   },
   container: {
     borderWidth: 3,
-    borderColor: "black",
+    borderColor: "transparent",
     flex: 1,
     justifyContent: "flex-start", //downwards to the center
     alignItems: "center", //left or right
   },
   firstText: {
     fontSize: 20,
-    lineHeight: 50,
+    lineHeight: 25,
     flex: 0.15,
     borderWidth: 15,
     borderColor: "transparent",
@@ -29,17 +27,19 @@ const insStyles = StyleSheet.create({
   secondText: {
     fontSize: 20,
     lineHeight: 25,
+    flex: 0.15,
     //fontFamily: "Arial",
   },
   button: {
-    height:40,
-    width:100,
+    height: 40,
+    width: 200,
     borderWidth: 1,
-    borderColor: "lightgrey",
-    backgroundColor:"blue",
-    justifyContent:"center",
-    alignItems:"center",
-    borderRadius:20
+    borderColor: "transparent",
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
+    marginTop: 15,
   },
 });
 
