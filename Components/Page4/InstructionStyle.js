@@ -1,17 +1,11 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 
 const insStyles = StyleSheet.create({
   baseText: {
     //fontFamily: "Arial",
   },
-  titleText: {
-    fontSize: 25,
-    fontWeight: "bold",
-    textAlign: "center",
-    width: "100%",
-    //fontFamily: "Times New Roman",
-  },
+
   container: {
     borderWidth: 3,
     borderColor: "black",
@@ -19,11 +13,19 @@ const insStyles = StyleSheet.create({
     justifyContent: "flex-start", //downwards to the center
     alignItems: "center", //left or right
   },
+  titleText: {
+    fontSize: 25,
+    fontWeight: "bold",
+    textAlign: "center",
+    width: "100%",
+    marginTop: 50,
+  },
+  //fontFamily: "Times New Roman",
   firstText: {
     fontSize: 20,
-    lineHeight: 50,
+    lineHeight: 25,
     flex: 0.15,
-    borderWidth: 15,
+    borderWidth: 3,
     borderColor: "transparent",
   },
   secondText: {
@@ -32,9 +34,11 @@ const insStyles = StyleSheet.create({
     //fontFamily: "Arial",
   },
   button: {
-    flex: 0.15,
+    flex: 0.05,
     borderWidth: 15,
     borderColor: "transparent",
+    backgroundColor: "green",
+    marginTop: 10,
   },
 });
 

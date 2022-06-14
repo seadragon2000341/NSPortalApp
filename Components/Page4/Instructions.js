@@ -19,15 +19,15 @@ export default function Ins(props) {
   return (
     <ScrollView>
       <View style={insStyles.container}>
-        <Text style={insStyles.baseText}>
+        <View style={{ justifyContent: "flex-start" }}>
           <Text style={insStyles.titleText} onPress={onPressTitle}>
             Video Instruction
           </Text>
-          <Text style={insStyles.firstText}>
-            {"\n"}
-            Before commencing the activity, please bring the camera close to
-            your face so that we can confirm your identity{"\n"}
-          </Text>
+        </View>
+        <Text style={insStyles.firstText}>
+          {"\n"}
+          Before commencing the activity, please bring the camera close to your
+          face so that we can confirm your identity{"\n"}
         </Text>
         <View>
           <Image
@@ -48,7 +48,7 @@ export default function Ins(props) {
               width: 500,
               height: 200,
               borderRadius: 25,
-              padding: 50,
+              marginTop: 10,
               //flex: 0.45,
             }}
           />
@@ -60,14 +60,17 @@ export default function Ins(props) {
               width: 500,
               height: 200,
               borderRadius: 25,
-              padding: 50,
+              marginTop: 10,
               //flex: 0.45,
             }}
           />
         </View>
         <View>
-          <TouchableOpacity style={[insStyles.button]} onPress = {()=>props.navigation.navigate('Page5')}>
-            <Text>Proceed</Text>
+          <TouchableOpacity
+            style={[insStyles.button]}
+            onPress={() => props.navigation.navigate("Page5")}
+          >
+            <Text style={{ fontSize: 25 }}>Proceed</Text>
           </TouchableOpacity>
         </View>
       </View>
