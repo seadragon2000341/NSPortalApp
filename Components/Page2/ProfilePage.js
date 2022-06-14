@@ -1,22 +1,22 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image, SafeAreaView} from "react-native";
 import styles from "./profileStyle";
-import IpptStack from "../Page3/Page3"
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons'; 
 
 
 
-export default function ProfileScreen(navigation){
+export default function ProfileScreen({navigation}){
     let  [image,setImage] = useState(true)
     let toggleSwitch = () => setImage(previousState => !previousState);
     let deez = require("./barcode.png")
     let imageUri = image ?  require("./campPass.png"): require("./barcode.png");
     const Stack = createStackNavigator();
 
-    function MainProfile({navigation}){
-        return(
+    
+    return(
         <View style = {styles.container}>
             <View style = {styles.title}>
                 <View style = {styles.titleText}>
@@ -35,7 +35,7 @@ export default function ProfileScreen(navigation){
             </View>
             <View style = {styles.navButtons}>
                 <View style = {styles.row1}>
-                    <TouchableOpacity  style={[styles.button, {backgroundColor:"#E27D60"}]} onPress={()=>{navigation.navigate("Page3")}} >
+                    <TouchableOpacity  style={[styles.button, {backgroundColor:"#E27D60"}]} onPress={()=>{navigation.navigate("Ippt")}} >
                         <FontAwesome5 name="running" size={30} color="black" />
                         <Text>IPPT</Text>
                     </TouchableOpacity>
@@ -57,11 +57,5 @@ export default function ProfileScreen(navigation){
             </View>
         </View>
         )
-    }
-    return(
-        <Stack.Navigator initialRouteName='main' screenOptions={{headerShown:false}}>
-            <Stack.Screen name="main" component={MainProfile}></Stack.Screen>
-            <Stack.Screen name="Page3" component={IpptStack}></Stack.Screen>
-        </Stack.Navigator>
-    )
 }
+    
