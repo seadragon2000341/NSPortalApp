@@ -32,9 +32,14 @@ const insStyles = StyleSheet.create({
     //fontFamily: "Arial",
   },
   button: {
-    flex: 0.15,
-    borderWidth: 15,
-    borderColor: "transparent",
+    height:40,
+    width:100,
+    borderWidth: 1,
+    borderColor: "lightgrey",
+    backgroundColor:"blue",
+    justifyContent:"center",
+    alignItems:"center",
+    borderRadius:20
   },
 });
 
