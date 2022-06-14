@@ -13,7 +13,7 @@ import Score from "./Score";
 import Webcam from "react-webcam";
 import StartRecord from "./StartRecord";
 
-export default function Page5() {
+export default function Page5(props) {
   const [pushupCam, setpushupCam] = useState(false);
   const [situpCam, setsitupCam] = useState(false);
   const [pushupTime, setpushupTime] = useState(false);
@@ -36,7 +36,9 @@ export default function Page5() {
               }}
             />
             <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
-              <Text style={styles.buttonText}>Click on camera icon to start IPPT recording</Text>
+              <Text style={styles.buttonText}>
+                Click on camera icon to start IPPT recording
+              </Text>
             </TouchableOpacity>
           </View>
         ) : null}
@@ -55,8 +57,10 @@ export default function Page5() {
         ) : null}
 
         {pushupTime ? (
+          <Score name="Pushups" data="48" points="23/25"></Score>
+        ) : null}
+        {pushupTime && !situpTime && !situpCam ? (
           <View>
-            <Score name="Pushups" data="48" points="23/25"></Score>
             <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
               <Text style={styles.buttonText}>Situps will commence in:</Text>
             </TouchableOpacity>
@@ -77,8 +81,10 @@ export default function Page5() {
           </View>
         ) : null}
         {situpTime ? (
+          <Score name="Situps" data="50" points="24/25"></Score>
+        ) : null}
+        {situpTime && !runTime && !runCam ? (
           <View>
-            <Score name="Situps" data="50" points="24/25"></Score>
             <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
               <Text style={styles.buttonText}>2.4km will start in:</Text>
             </TouchableOpacity>
@@ -101,8 +107,17 @@ export default function Page5() {
           </View>
         ) : null}
         {runTime ? (
-          <Score name="2.4km" data="10 mins 15 sec" points="39/50"></Score>
+          <View>
+            <Score name="2.4km" data="10 mins 15 sec" points="39/50"></Score>
+            <TouchableOpacity activeOpacity={0.8} style={styles.button1} onPress={() => {
+              alert("Attempt submitted!");
+              props.navigation.navigate("Profile")
+            }}>
+              <Text style={styles.buttonText}>Submit attempt</Text>
+            </TouchableOpacity>
+          </View>
         ) : null}
+
         <StatusBar style="auto" />
       </View>
     </ScrollView>
@@ -125,7 +140,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
-    marginLeft: 120
+    marginLeft: 120,
   },
   button1: {
     backgroundColor: "red",
@@ -136,10 +151,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   buttonText: {
-      fontSize: 18,
-      color: "white",
-      fontWeight: "bold",
-      alignSelf: "center",
-      textTransform: "uppercase"
-  }
+    fontSize: 18,
+    color: "white",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase",
+  },
 });
