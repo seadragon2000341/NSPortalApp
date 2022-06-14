@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image, SafeAreaView} from "react-native";
 import styles from "./profileStyle";
-
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons'; 
@@ -20,7 +20,7 @@ export default function ProfileScreen({navigation}){
         <View style = {styles.container}>
             <View style = {styles.title}>
                 <View style = {styles.titleText}>
-                    <Text style = {{fontSize:16}}>Welcome back,</Text>
+                    <Text style = {{fontSize:24, fontWeight:"bold"}}>Welcome back,</Text>
                     <Text style = {{fontSize:32}}>2LT Tan Li Hao</Text>
                 </View>
                 <View style ={styles.titleImage}>
@@ -35,11 +35,11 @@ export default function ProfileScreen({navigation}){
             </View>
             <View style = {styles.navButtons}>
                 <View style = {styles.row1}>
-                    <TouchableOpacity  style={[styles.button, {backgroundColor:"#E27D60"}]} onPress={()=>{navigation.navigate("Ippt")}} >
-                        <FontAwesome5 name="running" size={30} color="black" />
+                    <TouchableOpacity  style={[styles.button, {backgroundColor:"#EDF5E1"}]} onPress={()=>{navigation.navigate("IPPT")}} >
+                    <MaterialCommunityIcons name="run" size={30} color="black" />
                         <Text>IPPT</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, {backgroundColor:"#C38D9E"}]}>
+                    <TouchableOpacity style={[styles.button, {backgroundColor:"#EDF5E1"}]}>
                         <FontAwesome5 name="calendar" size={30} color="black" />
                         <Text>Career Planning</Text>
                     </TouchableOpacity>
@@ -47,9 +47,9 @@ export default function ProfileScreen({navigation}){
                 <View style = {styles.row2}>
                     <TouchableOpacity style={[styles.button, {backgroundColor:"#EDF5E1"}]}>
                         <MaterialIcons name="forum" size={30} color="black" />
-                        <Text>Forumn</Text>
+                        <Text>Forum</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.button, {backgroundColor:"#B1A296"}]}>
+                    <TouchableOpacity style={[styles.button, {backgroundColor:"#EDF5E1"}]}>
                         <FontAwesome5 name="hand-holding-medical" size={30} color="black" />
                         <Text>Health</Text>
                     </TouchableOpacity>

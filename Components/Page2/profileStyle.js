@@ -4,14 +4,15 @@ import { StyleSheet, StatusBar } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#fff",
+      backgroundColor: "#f5f5f5",
       paddingTop: StatusBar.currentHeight,
     },
     title:{
       flex:0.15,
       flexDirection:"row",
       justifyContent:"space-between",
-      backgroundColor:"green"
+      backgroundColor:"#fff",
+      marginBottom:10
 
         
     },
@@ -30,14 +31,16 @@ const styles = StyleSheet.create({
         flex:0.4,
         justifyContent:"center",
         alignItems:"center",
+        backgroundColor:"#fff"
 
     },
     navButtons:{
+      marginTop:10,
       flex:0.45,
-      borderWidth:3,
-      borderColor:"black",
+      // borderWidth:3,
+      // borderColor:"black",
       justifyContent:"center",
-      backgroundColor:"#557A95"
+      backgroundColor:"#fff"
     },
     row1:{
       flexDirection:"row",

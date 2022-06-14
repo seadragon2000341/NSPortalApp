@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Ins from "./Components/Page4/Instructions";
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import Login from "./Components/Page1/Page1";
 
 import { createStackNavigator } from "@react-navigation/stack";
@@ -20,12 +21,14 @@ export function MainStack() {
 
           if (route.name === "Profile") {
             iconName = focused ? "person-sharp" : "person-outline";
+            return <Ionicons name={iconName} size={size} color={color} />;
           }
 
-          if (route.name === "Ippt") {
+          if (route.name === "IPPT") {
             iconName = focused
-              ? "ios-information-circle-sharp"
-              : "ios-information-circle-outline";
+              ? "run-fast"
+              : "run";
+            return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
           }
 
           // You can return any component that you like here!
@@ -43,7 +46,7 @@ export function MainStack() {
       />
 
       <Tab.Screen
-        name="Ippt"
+        name="IPPT"
         options={{ headerShown: false }}
         component={IpptStack}
       />
