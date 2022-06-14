@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     },
 
     detailsContainer2: {
-        height: 400,
+        height: 440,
         width: "100%",
         //flex: 1,
         backgroundColor: "#fff",
