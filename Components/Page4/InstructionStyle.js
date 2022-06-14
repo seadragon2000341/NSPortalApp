@@ -7,7 +7,7 @@ const insStyles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     width: "100%",
-    marginTop: 25,
+    marginTop: 40,
     //fontFamily: "Times New Roman",
   },
   container: {
@@ -23,11 +23,13 @@ const insStyles = StyleSheet.create({
     flex: 0.15,
     borderWidth: 15,
     borderColor: "transparent",
+    backgroundColor: "white",
   },
   secondText: {
     fontSize: 20,
     lineHeight: 25,
     flex: 0.15,
+    backgroundColor: "white",
     //fontFamily: "Arial",
   },
   button: {
