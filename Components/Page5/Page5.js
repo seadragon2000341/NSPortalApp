@@ -24,20 +24,27 @@ export default function Page5() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        {!pushupCam && !pushupTime? <View ><FontAwesome
-          name="camera"
-          size={200}
-          style={styles.camera}
-          onClick={() => {
-            alert("camera will start recording");
-            setpushupCam(true);
-          }}
-        />
-          <Text>Press camera button to start IPPT recording</Text></View>
-          : null}
+        {!pushupCam && !pushupTime ? (
+          <View>
+            <FontAwesome
+              name="camera"
+              size={200}
+              style={styles.camera}
+              onClick={() => {
+                alert("camera will start recording");
+                setpushupCam(true);
+              }}
+            />
+            <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
+              <Text style={styles.buttonText}>Click on camera icon to start IPPT recording</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
         {pushupCam ? (
           <View>
-            <Text>Pushups will end in:</Text>
+            <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
+              <Text style={styles.buttonText}>Pushups will end in:</Text>
+            </TouchableOpacity>
             <Countdown
               time={5}
               finishComponent={setpushupTime}
@@ -50,13 +57,17 @@ export default function Page5() {
         {pushupTime ? (
           <View>
             <Score name="Pushups" data="48" points="23/25"></Score>
-            <Text>Time to situp: Autorecording will start in: </Text>
+            <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
+              <Text style={styles.buttonText}>Situps will commence in:</Text>
+            </TouchableOpacity>
             <StartRecord time={10} setCam={setsitupCam}></StartRecord>
           </View>
         ) : null}
         {situpCam ? (
           <View>
-            <Text>Situps will end in:</Text>
+            <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
+              <Text style={styles.buttonText}>Situps will end in:</Text>
+            </TouchableOpacity>
             <Countdown
               time={5}
               finishComponent={setsitupTime}
@@ -68,14 +79,17 @@ export default function Page5() {
         {situpTime ? (
           <View>
             <Score name="Situps" data="50" points="24/25"></Score>
-            <Text>Time to 2.4km: Autorecording will start in:</Text>
+            <TouchableOpacity activeOpacity={0.8} style={styles.button1}>
+              <Text style={styles.buttonText}>2.4km will start in:</Text>
+            </TouchableOpacity>
             <StartRecord time={10} setCam={setrunCam}></StartRecord>
           </View>
         ) : null}
         {runCam ? (
           <View>
             <Webcam></Webcam>
-            <TouchableOpacity style={styles.button}
+            <TouchableOpacity
+              style={styles.button}
               onPress={() => {
                 alert("Submitting log file and video file...");
                 setrunTime(true);
@@ -105,6 +119,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#DDDDDD",
     padding: 10,
-    margin: 10
+    margin: 10,
+  },
+  camera: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    marginLeft: 120
+  },
+  button1: {
+    backgroundColor: "red",
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  buttonText: {
+      fontSize: 18,
+      color: "white",
+      fontWeight: "bold",
+      alignSelf: "center",
+      textTransform: "uppercase"
   }
 });
